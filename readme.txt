@@ -1,16 +1,7 @@
-Arduino is an open-source physical computing platform based on a simple i/o
-board and a development environment that implements the Processing/Wiring
-language. Arduino can be used to develop stand-alone interactive objects or
-can be connected to software on your computer (e.g. Flash, Processing, MaxMSP).
-The boards can be assembled by hand or purchased preassembled; the open-source
-IDE can be downloaded for free.
-
-For more information, see the website at: http://www.arduino.cc/
-or the forums at: http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl
-
-To report a bug or a make a suggestions, go to:
-[hardware] http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?board=hwbugs
-[software] http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?board=swbugs
+Arduino IDE is a simple GUI software that helps the noob guy to interface himself with Arduino environment and ATmega and ATtiny MCU's.
+What Gioblu Robotics want to do is simply spread Arduino community giving to the noob the possibility to use many ATtiny and ATmega family MCU's, and to the skilled guy a place wear put his stuff that want to share to community.
+The list, analyzing the web is very long, so long that creates problems visualizing it correctly. Actually I can't enter all portings because the "board" dropdownlist goes out of the screen.
+I am reasoning about dividing ATmega and ATtiny family MCU or some other categorization to reduce the list number :P
 
 INSTALLATION
 Detailed instructions are in reference/Guide_Windows.html and
