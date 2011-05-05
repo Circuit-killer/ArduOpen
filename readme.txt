@@ -1,4 +1,4 @@
-Arduino IDE is a simple GUI software that helps the noob guy to interface himself with Arduino environment and ATmega and ATtiny MCU's. What Gioblu Robotics wants to do with ArduOpen is simply to broaden the Arduino community by giving noobs the possibility to use many ATtiny and ATmega family MCU's, and to the skilled ones a place where they can put their stuff they want to share with the community. 
+ArduOpen IDE is a fork of Arduino IDE simple GUI software that helps the noob guy to interface himself with Arduino environment and ATmega and ATtiny MCU's. What Gioblu Robotics wants to do with ArduOpen is simply to broaden the Arduino community by giving noobs the possibility to use many ATtiny and ATmega family MCU's, and to the skilled ones a place where they can put their stuff they want to share with the community. For this reason with the help of Martino DiFilippo (grandmaster coder) we create for you a new board menu style, that enables to use a very big number of AVR MCU's. Download it and use it :P
 
 ISSUES:
 - Add a theme button where you can choose a template for your editor
