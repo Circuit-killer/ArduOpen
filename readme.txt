@@ -6,23 +6,11 @@ ISSUES:
 - New fancy icons :P
 - "Board" dropdown list modification / split to avoid out of screen list problem
 - Add new libraries
-- Add new gioblu.com tutorials related examples 
+- Add new http://www.gioblu.com tutorials related examples 
 
-INSTALLATION
-Detailed instructions are in reference/Guide_Windows.html and
-reference/Guide_MacOSX.html.  For Linux, see the Arduino playground:
-http://www.arduino.cc/playground/Learning/Linux
+HOW TO COMPILE THE IDE FROM JAVA FILES
 
-If you are using a USB Arduino, you will need to install the drivers for the
-FTDI chip on the board. These can be found in the drivers/ directory.
 
-* On Windows, plug in the Arduino board and point the Windows Add Hardware
-  wizard to the drivers/FTDI USB Drivers sub-directory of the Arduino
-  application directory.
-
-* On the Mac, install the FTDIUSBSerialDriver_10_4_10_5_10_6.mpkg package.
-  
-* On Linux, drivers are included in kernel versions 2.4.20 or greater.
 
 CREDITS
 Arduino is an open source project, supported by many.
