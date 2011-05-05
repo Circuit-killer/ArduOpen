@@ -9,17 +9,34 @@ ISSUES:
 
 HOW TO COMPILE THE IDE FROM JAVA FILES
 
-	
+On Linux, you need the Sun Java SDK, avr-gcc, avr-g++, avr-libc, make, ant, and git.
 
-CREDITS
-Arduino is an open source project, supported by many.
+2. Grab the code from GitHub
+this grabs the code as an anonymous user.
 
-The Arduino team is composed of Massimo Banzi, David Cuartielles, Tom Igoe,
-Gianluca Martino, and David A. Mellis.
+# grab the code, it'll take a while
+git clone git://github.com/arduino/Arduino.git
+# (maybe even a long while for you dialup and international folks)
+3. Build It
+Use the command line.
 
-Arduino uses the GNU avr-gcc toolchain, avrdude, avr-libc, and code from
-Processing and Wiring.
+cd /path/to/arduino/build
+ant
 
-Icon designed by ToDo: http://www.todo.to.it/
-"About" image created by Thomas Glaser (envis precisely).
+# if everything went well, you'll have no errors. (feel free to make
+# suggestions for things to include here for common problems)
 
+# then to run it
+ant run
+
+# each time you make a change, use ant to build the thing 
+# and run to get it up and running. 
+Updating to the Latest Version
+Each time you want to update to latest version from svn:
+
+cd /path/to/arduino
+git pull
+git update
+If new folders have been added, or you're gettin odd errors, use:
+
+ant clean
