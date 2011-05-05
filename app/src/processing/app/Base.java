@@ -991,32 +991,42 @@ public class Base {
   public void rebuildBoardsMenu(JMenu menu) {
     //System.out.println("rebuilding boards menu");
     menu.removeAll();      
-    ButtonGroup group = new ButtonGroup();
+    ButtonGroup buttonGroup = new ButtonGroup();
     for (Target target : targetsTable.values()) {
-      SortedSet<String> sortedMcus = new TreeSet<String>(target.getMcus().keySet());
+      SortedSet<String> sortedGroups = new TreeSet<String>(target.getMcus().keySet());
       
-      for (String mcu : sortedMcus) {
-        JMenu mcuMenu = new JMenu(mcu);
-        for (String board : target.getMcus().get(mcu).values()) {
-          AbstractAction action = 
-            new AbstractAction(target.getBoards().get(board).get("name")) {
-              public void actionPerformed(ActionEvent actionevent) {
-                //System.out.println("Switching to " + target + ":" + board);
-                Preferences.set("target", (String) getValue("target"));
-                Preferences.set("board", (String) getValue("board"));
-              }
-            };
-          action.putValue("target", target.getName());
-          action.putValue("board", board);
-          JMenuItem item = new JRadioButtonMenuItem(action);
-          if (target.getName().equals(Preferences.get("target")) &&
-              board.equals(Preferences.get("board"))) {
-            item.setSelected(true);
+      for (String group : sortedGroups) {
+        JMenu groupMenu = new JMenu(group);
+        SortedSet<String> sortedMcus = new TreeSet<String>(target.getMcus().get(group).keySet());
+        
+        for (String mcu : sortedMcus) {
+          JMenu mcuMenu = new JMenu(mcu);
+          
+          for (String board : target.getMcus().get(group).get(mcu).values()) {
+            AbstractAction action = 
+              new AbstractAction(target.getBoards().get(board).get("name")) {
+                public void actionPerformed(ActionEvent actionevent) {
+                  //System.out.println("Switching to " + target + ":" + board);
+                  Preferences.set("target", (String) getValue("target"));
+                  Preferences.set("board", (String) getValue("board"));
+                }
+              };
+            action.putValue("target", target.getName());
+            action.putValue("board", board);
+            JMenuItem item = new JRadioButtonMenuItem(action);
+            if (target.getName().equals(Preferences.get("target")) &&
+                board.equals(Preferences.get("board"))) {
+              item.setSelected(true);
+            }
+            
+            buttonGroup.add(item);
+            mcuMenu.add(item);
           }
-          group.add(item);
-          mcuMenu.add(item);
+          
+          groupMenu.add(mcuMenu);
         }
-        menu.add(mcuMenu);
+        
+        menu.add(groupMenu);
       }
     }
   }

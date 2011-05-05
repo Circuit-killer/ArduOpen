@@ -63,11 +63,30 @@ public class Target {
     }
     
     try {
+      Map knownMcus = new LinkedHashMap(4);
+      knownMcus.put("at90.*",   "at90");
+      knownMcus.put("atmega.*", "atmega");
+      knownMcus.put("attiny.*", "attiny");
+      knownMcus.put(".*", "others");
+    
       for (Object k : boards.keySet()) {
         String board = (String) k;
         String mcu = (String) ((Map) boards.get(board)).get("build.mcu");
-        if (!mcus.containsKey(mcu)) mcus.put(mcu, new HashMap());
-        ((Map) mcus.get(mcu)).put(board, board);
+        
+        for (Object r : knownMcus.keySet()) {
+          String regex = (String) r;
+          
+          if(mcu.matches(regex)) {
+            String groupName = (String) knownMcus.get(regex);
+            
+            if (!mcus.containsKey(groupName)) mcus.put(groupName, new HashMap());
+            Map mcuGroup = (Map) mcus.get(groupName);
+            if (!mcuGroup.containsKey(mcu)) mcuGroup.put(mcu, new HashMap());
+            ((Map) mcuGroup.get(mcu)).put(board, board);
+            
+            break;
+          }
+        }
       }
     } catch (Exception e) {
       System.err.println("Error creating MCU submenus");
@@ -101,7 +120,7 @@ public class Target {
   public Map<String, Map<String, String>> getProgrammers() {
     return programmers;
   }
-  public Map<String, Map<String, String>> getMcus() {
+  public Map<String, Map<String, Map<String, String>>> getMcus() {
     return mcus;
   }
 }
