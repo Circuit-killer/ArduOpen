@@ -1,7 +1,12 @@
 Arduino IDE is a simple GUI software that helps the noob guy to interface himself with Arduino environment and ATmega and ATtiny MCU's.
-What Gioblu Robotics want to do is simply spread Arduino community giving to the noob the possibility to use many ATtiny and ATmega family MCU's, and to the skilled guy a place wear put his stuff that want to share to community.
-The list, analyzing the web is very long, so long that creates problems visualizing it correctly. Actually I can't enter all portings because the "board" dropdownlist goes out of the screen.
-I am reasoning about dividing ATmega and ATtiny family MCU or some other categorization to reduce the list number :P
+What Gioblu Robotics wants to do is simply to broaden the Arduino community by giving noobs the possibility to use many ATtiny and ATmega family MCU's, and the skilled ones a place where they can put their stuff they want to share with the community. While browsing the web I found many ports of Arduino, so many, in fact, that showing them in the drop down menu is a problem by itself. I am thinking about dividing ATmega and ATtiny families, or some other categorization to reduce the menu's length. 
+
+ISSUES:
+- Add a theme button where you can choose a template for your editor
+- New fancy icons :P
+- "Board" dropdown list modification / split to avoid out of screen list problem
+- Add new library
+- Add new examples tutorial related
 
 INSTALLATION
 Detailed instructions are in reference/Guide_Windows.html and
