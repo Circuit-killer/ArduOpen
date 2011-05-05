@@ -5,8 +5,8 @@ ISSUES:
 - Add a theme button where you can choose a template for your editor
 - New fancy icons :P
 - "Board" dropdown list modification / split to avoid out of screen list problem
-- Add new library
-- Add new examples tutorial related
+- Add new libraries
+- Add new gioblu.com tutorials related examples 
 
 INSTALLATION
 Detailed instructions are in reference/Guide_Windows.html and
