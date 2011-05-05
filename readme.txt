@@ -1,5 +1,4 @@
-Arduino IDE is a simple GUI software that helps the noob guy to interface himself with Arduino environment and ATmega and ATtiny MCU's.
-What Gioblu Robotics wants to do is simply to broaden the Arduino community by giving noobs the possibility to use many ATtiny and ATmega family MCU's, and the skilled ones a place where they can put their stuff they want to share with the community. While browsing the web I found many ports of Arduino, so many, in fact, that showing them in the drop down menu is a problem by itself. I am thinking about dividing ATmega and ATtiny families, or some other categorization to reduce the menu's length. 
+Arduino IDE is a simple GUI software that helps the noob guy to interface himself with Arduino environment and ATmega and ATtiny MCU's. What Gioblu Robotics wants to do is simply to broaden the Arduino community by giving noobs the possibility to use many ATtiny and ATmega family MCU's, and the skilled ones a place where they can put their stuff they want to share with the community. While browsing the web I found many ports of Arduino, so many, in fact, that showing them in the drop down menu is a problem by itself. I am thinking about dividing ATmega and ATtiny families, or some other categorization to reduce the menu's length. 
 
 ISSUES:
 - Add a theme button where you can choose a template for your editor
@@ -10,7 +9,7 @@ ISSUES:
 
 HOW TO COMPILE THE IDE FROM JAVA FILES
 
-
+	
 
 CREDITS
 Arduino is an open source project, supported by many.
