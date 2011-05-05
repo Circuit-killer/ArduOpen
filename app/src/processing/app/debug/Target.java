@@ -35,12 +35,14 @@ public class Target {
   private File folder;
   private Map boards;
   private Map programmers;
+  private Map mcus;
   
   public Target(String name, File folder) {
     this.name = name;
     this.folder = folder;
     this.boards = new LinkedHashMap();
     this.programmers = new LinkedHashMap();
+    this.mcus = new LinkedHashMap();
     
     File boardsFile = new File(folder, "boards.txt");
     try {
@@ -58,6 +60,17 @@ public class Target {
       }
     } catch (Exception e) {
       System.err.println("Error loading boards from " + boardsFile + ": " + e);
+    }
+    
+    try {
+      for (Object k : boards.keySet()) {
+        String board = (String) k;
+        String mcu = (String) ((Map) boards.get(board)).get("build.mcu");
+        if (!mcus.containsKey(mcu)) mcus.put(mcu, new HashMap());
+        ((Map) mcus.get(mcu)).put(board, board);
+      }
+    } catch (Exception e) {
+      System.err.println("Error creating MCU submenus");
     }
 
     File programmersFile = new File(folder, "programmers.txt");
@@ -87,5 +100,8 @@ public class Target {
   }
   public Map<String, Map<String, String>> getProgrammers() {
     return programmers;
+  }
+  public Map<String, Map<String, String>> getMcus() {
+    return mcus;
   }
 }

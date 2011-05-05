@@ -993,24 +993,30 @@ public class Base {
     menu.removeAll();      
     ButtonGroup group = new ButtonGroup();
     for (Target target : targetsTable.values()) {
-      for (String board : target.getBoards().keySet()) {
-        AbstractAction action = 
-          new AbstractAction(target.getBoards().get(board).get("name")) {
-            public void actionPerformed(ActionEvent actionevent) {
-              //System.out.println("Switching to " + target + ":" + board);
-              Preferences.set("target", (String) getValue("target"));
-              Preferences.set("board", (String) getValue("board"));
-            }
-          };
-        action.putValue("target", target.getName());
-        action.putValue("board", board);
-        JMenuItem item = new JRadioButtonMenuItem(action);
-        if (target.getName().equals(Preferences.get("target")) &&
-            board.equals(Preferences.get("board"))) {
-          item.setSelected(true);
+      SortedSet<String> sortedMcus = new TreeSet<String>(target.getMcus().keySet());
+      
+      for (String mcu : sortedMcus) {
+        JMenu mcuMenu = new JMenu(mcu);
+        for (String board : target.getMcus().get(mcu).values()) {
+          AbstractAction action = 
+            new AbstractAction(target.getBoards().get(board).get("name")) {
+              public void actionPerformed(ActionEvent actionevent) {
+                //System.out.println("Switching to " + target + ":" + board);
+                Preferences.set("target", (String) getValue("target"));
+                Preferences.set("board", (String) getValue("board"));
+              }
+            };
+          action.putValue("target", target.getName());
+          action.putValue("board", board);
+          JMenuItem item = new JRadioButtonMenuItem(action);
+          if (target.getName().equals(Preferences.get("target")) &&
+              board.equals(Preferences.get("board"))) {
+            item.setSelected(true);
+          }
+          group.add(item);
+          mcuMenu.add(item);
         }
-        group.add(item);
-        menu.add(item);
+        menu.add(mcuMenu);
       }
     }
   }
