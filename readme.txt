@@ -15,7 +15,7 @@ On Linux, you need the Sun Java SDK, avr-gcc, avr-g++, avr-libc, make, ant, and 
 this grabs the code as an anonymous user.
 
 # grab the code, it'll take a while
-git clone git://github.com/arduino/Arduino.git
+git clone git://github.com/gioblu/ArduOpen.git
 # (maybe even a long while for you dialup and international folks)
 3. Build It
 Use the command line.
